@@ -16,6 +16,7 @@ Every guide's setup files are run in Docker before publishing, and each page say
 - [Self-host Uptime Kuma: free status monitoring](guides/02-uptime-kuma.md)
 - [Replace Calendly with self-hosted Cal.com](guides/03-calcom.md)
 - [Vaultwarden: a password manager for your team](guides/05-vaultwarden.md)
+- [Nextcloud vs Google Workspace: real costs and a tested setup](guides/06-nextcloud.md)
 
 ## Running several apps
 
