@@ -5,7 +5,7 @@ last_checked: 2026-10-30
 tested_on: "Ubuntu 24.04 LTS (SSH hardening and packages checked in an Ubuntu 24.04 container)"
 ---
 
-> **Disclosure:** this guide has no affiliate links today. If we add any later (for example to server providers), they'll be marked here, and we recommend the same options whether or not they pay us.
+> **Disclosure:** this guide has one affiliate link: the Vultr link below. If you sign up through it, Vultr may pay us a referral fee at no cost to you. We recommend the same providers either way, and the others are listed with plain links.
 
 Most small-business software is a monthly bill for something a $5 to $10 server can run. Before you replace any of it, you need one server set up properly. This guide does that once, so every other guide on the site can start with "on your server, run…".
 
@@ -29,7 +29,7 @@ For running 3 to 6 small business apps (scheduling, analytics, a password manage
 | Disk | 40 GB SSD | 80 GB SSD |
 | OS | Ubuntu 24.04 LTS | Ubuntu 24.04 LTS |
 
-Most providers sell this for $5 to $12 a month. Good options include Hetzner (cheapest in Europe), DigitalOcean and Vultr (simple dashboards, many regions) and Hostinger (cheap long-term plans). Pick the region closest to your customers. For a first server, any of them is fine: pick on price and region, since all four offer Ubuntu 24.04 servers with the specs above. See [current prices compared](./09-which-vps.md).
+Most providers sell this for $5 to $12 a month. Good options include Hetzner (cheapest in Europe), DigitalOcean and <a href="https://www.vultr.com/?ref=9932432" rel="sponsored nofollow">Vultr</a> (affiliate link; simple dashboards, many regions) and Hostinger (cheap long-term plans). Pick the region closest to your customers. For a first server, any of them is fine: pick on price and region, since all four offer Ubuntu 24.04 servers with the specs above. See [current prices compared](./09-which-vps.md).
 
 When the provider asks for an SSH key, give it one (next step). Choose **Ubuntu 24.04 LTS**.
 

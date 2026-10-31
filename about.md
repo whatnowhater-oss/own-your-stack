@@ -14,7 +14,7 @@ The guides are written with AI assistance and checked by running them. Prices co
 
 ## Affiliate links
 
-There are no affiliate links on this site today. If we add any (for example to server providers), every page that has one will say so at the top, and we'll keep recommending the best option whether or not it pays us.
+Some pages have affiliate links. Today that's one program: Vultr, a server provider, linked from the [server setup](./guides/01-the-7-dollar-server.md) and [VPS comparison](./guides/09-which-vps.md) guides. If you sign up through one of those links, the provider may pay us a fee at no cost to you. Every page with an affiliate link says so at the top, the link itself is labelled, and we recommend the best option whether or not it pays us.
 
 ## Corrections
 

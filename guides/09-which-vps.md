@@ -5,7 +5,7 @@ last_checked: 2026-10-31
 tested_on: "Prices taken from each provider's public pricing page on Oct 31, 2026. We have not benchmarked these providers' speed or support."
 ---
 
-> **Disclosure:** this page has no affiliate links today. If we add any later, they'll be marked here. Some providers pay referrers in cash, some only in account credit, and some not at all; we'll recommend the same options either way.
+> **Disclosure:** this page has one affiliate link, to Vultr, marked "affiliate link" where it appears. If you sign up through it, Vultr may pay us a referral fee at no cost to you. The other providers are linked plainly, and our picks would be the same without the fee.
 
 Every guide on this site runs on a plain Linux server (a "VPS") with Ubuntu 24.04 and Docker. All four providers below sell that. The differences are price, where their data centers are, and the fine print.
 
@@ -26,7 +26,7 @@ Disk matters too: 50 GB is plenty for apps; file storage like Nextcloud needs mo
 | Provider | 2 GB server | 4 GB server | Billing | Source |
 | --- | --- | --- | --- | --- |
 | DigitalOcean | $12/mo (1 vCPU, 50 GB) | $24/mo (2 vCPU, 80 GB) | monthly, cancel anytime | [pricing](https://www.digitalocean.com/pricing/droplets) |
-| Vultr | $10/mo (1 vCPU, 55 GB) | $20/mo (2 vCPU, 80 GB) | monthly, cancel anytime | [pricing](https://www.vultr.com/pricing/) |
+| <a href="https://www.vultr.com/?ref=9932432" rel="sponsored nofollow">Vultr</a> (affiliate link) | $10/mo (1 vCPU, 55 GB) | $20/mo (2 vCPU, 80 GB) | monthly, cancel anytime | [pricing](https://www.vultr.com/pricing/) |
 | Hostinger | none smaller than 4 GB | $6.49/mo (1 vCPU, 50 GB) **with a 24-month prepay**, renews at $11.99/mo | prepaid term | [pricing](https://www.hostinger.com/vps-hosting) |
 | Hetzner | plans from €5.99/mo (cost-optimized) or €6.49/mo (regular performance) | see their page for current sizes | monthly, cancel anytime | [pricing](https://www.hetzner.com/cloud) |
 
