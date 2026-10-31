@@ -1,8 +1,8 @@
 ---
 title: "The $7/month server: set up a VPS for self-hosting in 30 minutes"
 description: "A safe, boring, repeatable setup for one small Linux server that can run every app on this site."
-last_checked: 2026-10-30
-tested_on: "Ubuntu 24.04 LTS (SSH hardening and packages checked in an Ubuntu 24.04 container)"
+last_checked: 2026-10-31
+tested_on: "Ubuntu 24.04 LTS on a real Vultr server (1 vCPU, 1 GB), steps 2 to 7 run end to end from a Windows PC, Oct 31 2026"
 ---
 
 > **Disclosure:** this guide has one affiliate link: the Vultr link below. If you sign up through it, Vultr may pay us a referral fee at no cost to you. We recommend the same providers either way, and the others are listed with plain links.
@@ -33,6 +33,13 @@ Most providers sell this for $5 to $12 a month. Good options include Hetzner (ch
 
 When the provider asks for an SSH key, give it one (next step). Choose **Ubuntu 24.04 LTS**.
 
+Check the order form before you pay. When we created a server at Vultr in October 2026, the form's defaults included choices you probably don't want:
+
+- **Plan type:** pick **Shared CPU**. Dedicated CPU costs several times more.
+- **Operating system:** the form picked a newer, non-LTS Ubuntu. Pick **24.04 LTS** explicitly, because LTS versions get 5 years of security updates.
+- **Auto backups:** these were switched on, at extra cost each month. You can leave them on as a second layer, but [your own backups](./08-backups.md) are what this site relies on.
+- **SSH key:** the form had no way to add a new key. Add the key under **Account → SSH Keys** first, then open the order form, because reloading the form loses what you picked.
+
 ## 2. Make an SSH key (on your own computer)
 
 An SSH key replaces your password with a file only your computer has. On macOS, Linux or Windows 10+ (PowerShell), run:
@@ -49,6 +56,8 @@ cat ~/.ssh/id_ed25519.pub
 
 Paste that one line into your provider's "SSH keys" box when creating the server. Never share the file without `.pub`.
 
+**On Windows:** if PowerShell says `ssh` is not recognized, the OpenSSH client isn't installed. Add it under **Settings → System → Optional features → OpenSSH Client**, or use **Git Bash** if Git is installed. On our test PC, `ssh-keygen` worked in PowerShell but `ssh` didn't, so check both.
+
 ## 3. Log in and create your own user
 
 Your provider shows the server's IP address. Log in as root once:
@@ -57,6 +66,8 @@ Your provider shows the server's IP address. Log in as root once:
 ssh root@YOUR_SERVER_IP
 ```
 
+The first time you connect, SSH asks *"Are you sure you want to continue connecting (yes/no)?"*. Type `yes`. It's just confirming that this is a server you haven't connected to before.
+
 Create a normal user (we'll call it `deploy`), give it admin rights, and copy your key to it:
 
 ```bash
@@ -64,6 +75,8 @@ adduser deploy
 usermod -aG sudo deploy
 rsync --archive --chown=deploy:deploy ~/.ssh /home/deploy
 ```
+
+`adduser` asks you to set a password for `deploy`. **Pick a strong one and save it in your password manager.** You won't use it to log in, but `sudo` asks for it whenever you run an admin command. Press Enter to skip the name and phone questions.
 
 Open a **second** terminal and check that the new user works before you go further:
 
@@ -77,7 +90,7 @@ sudo whoami   # should print: root
 Still as `deploy`, write a small settings file:
 
 ```bash
-sudo tee /etc/ssh/sshd_config.d/99-hardening.conf > /dev/null <<'EOF'
+sudo tee /etc/ssh/sshd_config.d/00-hardening.conf > /dev/null <<'EOF'
 PermitRootLogin no
 PasswordAuthentication no
 KbdInteractiveAuthentication no
@@ -86,6 +99,14 @@ sudo sshd -t && sudo systemctl restart ssh
 ```
 
 `sshd -t` checks the file first, so a typo can't lock you out. On Ubuntu 24.04 the service is called `ssh`, not `sshd`.
+
+**The file name matters.** Many providers' Ubuntu images put their own file in the same folder, such as `50-cloud-init.conf`, and it turns password logins back **on**. SSH reads the files in name order and keeps the first value it finds, so your file's name must start with `00` to take priority. We found this on a real Vultr server: with the file named `99-hardening.conf`, password logins still worked. Check that the setting took effect:
+
+```bash
+sudo sshd -T | grep -E 'passwordauthentication|permitrootlogin'
+```
+
+Both lines must end in `no`. If either says `yes`, check the file name and look for other files in `/etc/ssh/sshd_config.d/`.
 
 Keep your current session open and test a fresh login from another terminal. If it works, you're done with SSH.
 
@@ -101,7 +122,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-Allow `OpenSSH` **before** `enable`, or you'll cut off your own connection.
+Allow `OpenSSH` **before** `enable`, or you'll cut off your own connection. `ufw enable` warns that it *"may disrupt existing ssh connections"* and asks `(y|n)`. Type `y`. Your session stays connected because you allowed SSH first.
 
 One catch worth knowing: ports Docker publishes can bypass ufw. That's why every compose file on this site binds app ports to `127.0.0.1` and lets one web server (Caddy) face the internet on 80 and 443.
 
@@ -157,4 +178,4 @@ Before you put anything important on it, set up [nightly backups](./08-backups.m
 
 ---
 
-*Last checked October 30, 2026 on Ubuntu 24.04 LTS. Found a step that no longer works? [Open an issue](https://github.com/whatnowhater-oss/own-your-stack/issues) and we'll fix it.*
+*Tested October 31, 2026 on a real Vultr server: 1 vCPU and 1 GB of memory, running Ubuntu 24.04 LTS, set up from a Windows PC. Steps 2 to 7 worked as written once the fixes above were in. After step 4, root and password logins were both refused, ufw allowed only 22, 80 and 443, unattended-upgrades was active, and Docker ran without sudo. Step 8 wasn't tested with a real domain, but HTTPS through Caddy worked on a test hostname. Found a step that no longer works? [Open an issue](https://github.com/whatnowhater-oss/own-your-stack/issues) and we'll fix it.*

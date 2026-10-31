@@ -84,7 +84,7 @@ docker compose up -d
 docker compose ps
 ```
 
-Both containers should show `Up`, and Uptime Kuma should show `(healthy)` after about 30 seconds.
+Both containers should show `Up`, and Uptime Kuma should show `(healthy)` after about 30 seconds. If the first `up -d` stops during the download with an error like `failed to extract layer ... EOF`, the download broke, not your setup. Run the same command again.
 
 ## 3. First-run setup
 
