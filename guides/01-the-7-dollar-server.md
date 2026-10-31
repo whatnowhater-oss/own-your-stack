@@ -153,7 +153,7 @@ Your server is ready. Good first apps:
 - [Vaultwarden](./05-vaultwarden.md): a team password manager
 - [One Caddy for all your apps](./07-caddy.md): run several apps on one server
 
-Before you put anything important on it, set up nightly backups (guide coming soon). A server without backups is a gamble.
+Before you put anything important on it, set up [nightly backups](./08-backups.md). A server without backups is a gamble.
 
 ---
 

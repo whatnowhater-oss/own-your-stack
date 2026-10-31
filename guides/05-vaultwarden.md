@@ -9,7 +9,7 @@ tested_on: "Vaultwarden 1.37.4 and Caddy 2.11 in Docker Compose (started, admin 
 
 Team password managers usually cost $4 to $8 per person per month, so a 5-person business pays $240 to $480 a year. [Vaultwarden](https://github.com/dani-garcia/vaultwarden) is a free, open-source server that works with the **official Bitwarden apps** (browser extension, phone, desktop). Your team gets a polished app; you pay only for a server you may already run.
 
-Be honest with yourself about one thing first: **this server will hold every password your business has.** Self-hosting it means you are responsible for updates and backups. If that worries you, a paid service is a sensible choice. If you're comfortable with the [30-minute server setup](./01-the-7-dollar-server.md) and you will set up backups (guide coming soon), read on.
+Be honest with yourself about one thing first: **this server will hold every password your business has.** Self-hosting it means you are responsible for updates and backups. If that worries you, a paid service is a sensible choice. If you're comfortable with the [30-minute server setup](./01-the-7-dollar-server.md) and you will set up [backups](./08-backups.md), read on.
 
 Vaultwarden is an independent project, not made by Bitwarden Inc. It's widely used and actively maintained, but it hasn't had the same formal security audits as Bitwarden's own server.
 
@@ -121,7 +121,7 @@ Now only people you invite can join. Invite your team at `https://vault.yourbusi
 
 ## Backups: not optional
 
-Everything lives in `./data`. If the server dies without a backup, every shared password is gone. At minimum, copy that folder off the server every night. A backup guide that automates this and tests the restore is coming soon.
+Everything lives in `./data`. If the server dies without a backup, every shared password is gone. At minimum, copy that folder off the server every night. Our [backup guide](./08-backups.md) automates this and tests the restore.
 
 ## Updating
 

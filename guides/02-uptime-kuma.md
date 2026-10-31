@@ -123,7 +123,7 @@ docker compose pull
 docker compose up -d
 ```
 
-Copy the `data` folder somewhere safe first. A backup guide that automates this is coming soon.
+Copy the `data` folder somewhere safe first. Our [backup guide](./08-backups.md) automates that.
 
 ## Did it pay off?
 
