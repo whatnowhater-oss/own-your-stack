@@ -14,5 +14,4 @@ defaults:
       path: "guides"
     values:
       layout: page
-header_pages:
-  - index.md
+header_pages: []
