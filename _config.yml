@@ -1,0 +1,18 @@
+title: Own Your Stack
+description: Tested, copy-paste guides for replacing monthly SaaS bills with self-hosted apps on a small server.
+theme: minima
+baseurl: /own-your-stack
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-sitemap
+relative_links:
+  enabled: true
+  collections: false
+defaults:
+  - scope:
+      path: "guides"
+    values:
+      layout: page
+header_pages:
+  - index.md
