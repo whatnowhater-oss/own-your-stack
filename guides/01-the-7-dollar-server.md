@@ -29,7 +29,7 @@ For running 3 to 6 small business apps (scheduling, analytics, a password manage
 | Disk | 40 GB SSD | 80 GB SSD |
 | OS | Ubuntu 24.04 LTS | Ubuntu 24.04 LTS |
 
-Most providers sell this for $5 to $12 a month. Good options include Hetzner (cheapest in Europe), DigitalOcean and Vultr (simple dashboards, many regions) and Hostinger (cheap long-term plans). Pick the region closest to your customers. A full comparison of these providers is coming soon.
+Most providers sell this for $5 to $12 a month. Good options include Hetzner (cheapest in Europe), DigitalOcean and Vultr (simple dashboards, many regions) and Hostinger (cheap long-term plans). Pick the region closest to your customers. For a first server, any of them is fine: pick on price and region, since all four offer Ubuntu 24.04 servers with the specs above.
 
 When the provider asks for an SSH key, give it one (next step). Choose **Ubuntu 24.04 LTS**.
 
