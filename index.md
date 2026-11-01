@@ -21,6 +21,7 @@ Every setup in our guides is run in Docker before publishing, and each page says
 - [Vaultwarden: a password manager for your team](guides/05-vaultwarden.md)
 - [Nextcloud vs Google Workspace: real costs and a tested setup](guides/06-nextcloud.md)
 - [Invoice Ninja: free invoicing instead of FreshBooks](guides/11-invoice-ninja.md)
+- [n8n: automate your business without paying Zapier per task](guides/12-n8n.md)
 
 ## Running several apps
 
