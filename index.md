@@ -20,6 +20,7 @@ Every setup in our guides is run in Docker before publishing, and each page says
 - [Replace Calendly with self-hosted Cal.com](guides/03-calcom.md)
 - [Vaultwarden: a password manager for your team](guides/05-vaultwarden.md)
 - [Nextcloud vs Google Workspace: real costs and a tested setup](guides/06-nextcloud.md)
+- [Invoice Ninja: free invoicing instead of FreshBooks](guides/11-invoice-ninja.md)
 
 ## Running several apps
 
