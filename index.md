@@ -9,9 +9,10 @@ Every setup in our guides is run in Docker before publishing, and each page says
 
 ## Start here
 
-1. [Is it worth it? The SaaS savings calculator](guides/10-savings-calculator.md)
-2. [Which VPS for self-hosting? Current prices compared](guides/09-which-vps.md)
-3. [The $7/month server: set up a VPS for self-hosting in 30 minutes](guides/01-the-7-dollar-server.md)
+1. [Which apps should you self-host first?](guides/14-where-to-start.md)
+2. [Is it worth it? The SaaS savings calculator](guides/10-savings-calculator.md)
+3. [Which VPS for self-hosting? Current prices compared](guides/09-which-vps.md)
+4. [The $7/month server: set up a VPS for self-hosting in 30 minutes](guides/01-the-7-dollar-server.md)
 
 ## Apps
 
