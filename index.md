@@ -22,6 +22,7 @@ Every setup in our guides is run in Docker before publishing, and each page says
 - [Nextcloud vs Google Workspace: real costs and a tested setup](guides/06-nextcloud.md)
 - [Invoice Ninja: free invoicing instead of FreshBooks](guides/11-invoice-ninja.md)
 - [n8n: automate your business without paying Zapier per task](guides/12-n8n.md)
+- [Paperless-ngx: search every receipt and contract you've scanned](guides/13-paperless-ngx.md)
 
 ## Running several apps
 
